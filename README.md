@@ -24,7 +24,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 17.0.2+8-LTS-86, mixed mode, sharing)
 ### For Linux Platform
 Follow the steps at https://docs.oracle.com/en/java/javase/13/install/installation-jdk-linux-platforms.html to achieve that.
 
-###For Mac
+### For Mac
 Follow the steps at https://docs.oracle.com/javase/10/install/installation-jdk-and-jre-macos.htm
 
 ## How to Install Lombok in your IDE
