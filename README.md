@@ -1,0 +1,50 @@
+# KTMInv
+This is the backend restful service for https://github.com/mherman22/frontend.
+
+## Tools used in development
+- [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Mysql](https://www.mysql.com/)
+- [Lombok](https://projectlombok.org/)
+- [Hibernate JPA](https://www.microsoft.com/software-download/windows10)
+
+## How to Open the repo in an IDE?
+Make sure you have [java](https://www.oracle.com/java/) installed on your machine.
+
+### For Windows
+For Windows platform/machine, do the following;-
+- Download and install java 17.
+- Set environment variable path (JAVA_HOME).
+- Test to see if java has been installed. `java -version` and it should return something like
+```
+java version "17.0.2" 2022-01-18 LTS
+Java(TM) SE Runtime Environment (build 17.0.2+8-LTS-86)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.2+8-LTS-86, mixed mode, sharing)
+```
+### For Linux Platform
+Follow the steps at https://docs.oracle.com/en/java/javase/13/install/installation-jdk-linux-platforms.html to achieve that.
+
+###For Mac
+Follow the steps at https://docs.oracle.com/javase/10/install/installation-jdk-and-jre-macos.htm
+
+## How to Install Lombok in your IDE
+Make sure your IDE has Lombok configured in it, if not do the following;-
+- For Eclipse, follow the steps at https://projectlombok.org/setup/eclipse.
+- For Intellijea, follow the steps at https://projectlombok.org/setup/intellij.
+- For Netbeans, follow the steps at https://projectlombok.org/setup/netbeans.
+- For Spring Tool Suite, follow the steps at https://projectlombok.org/setup/eclipse.
+- For Visual Studio Code, follow the steps at https://projectlombok.org/setup/vscode.
+- For JBoss Developer Studio, follow the steps at https://projectlombok.org/setup/eclipse
+
+## Pull Requests? Wanna implement or make an addition or correct something?
+- fork this repository.
+- clone it onto your machine by running `git clone https://github.com/mherman22/KTMInv.git`.
+- make your changes and test them to ensure everything perfect.
+- create a branch `git checkout -b branch-name`.
+- commit your changes to your branch using `git add .` and  `git commit -m "commit message"`.
+- pull from origin to ensure your local repo is in sync with upstream. use `git pull origin branch-name`
+- push your changes using `git push origin branch-name`.
+- create a pull request and give it a proper description stating clearly the changes you have added.
+
+## Created By
+- [mherman22](https://github.com/mherman22)
