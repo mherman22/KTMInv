@@ -18,13 +18,16 @@ import lombok.Data;
 public class Products {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long productID;
+	private Long productID;
 	
 	@Column(name = "product_name")
 	private String productName;
 	
 	@Column(name = "product_type")
 	private String productType;
+	
+	@Column(name = "product_description")
+	private String productDescription;
 	
 	@Column(name = "product_quantity")
 	private Integer productQuantity;
