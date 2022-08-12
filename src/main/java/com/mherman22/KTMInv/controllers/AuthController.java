@@ -52,6 +52,7 @@ public class AuthController {
   @Autowired
   JwtUtils jwtUtils;
   @PostMapping("/signin")
+  
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
     Authentication authentication = authenticationManager
         .authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
@@ -76,9 +77,9 @@ public class AuthController {
       return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
     }
     // Create new user's account
-    User user = new User(signUpRequest.getUsername(),
+    User user = new User(null, signUpRequest.getUsername(),
                          signUpRequest.getEmail(),
-                         encoder.encode(signUpRequest.getPassword()));
+                         encoder.encode(signUpRequest.getPassword()), null);
     Set<String> strRoles = signUpRequest.getRole();
     Set<Role> roles = new HashSet<>();
     if (strRoles == null) {
