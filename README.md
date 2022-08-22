@@ -4,9 +4,11 @@ This is the backend restful service for https://github.com/mherman22/frontend.
 ## Tools used in development
 - [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 - [Spring Boot](https://spring.io/projects/spring-boot)
-- [Mysql](https://www.mysql.com/)
+- [MongoDB](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjDj4CYq9r5AhVrj2gJHT2EAzMYABAAGgJ3Zg&ohost=www.google.com&cid=CAESauD2Cnb9DjuARAaGdb8fUY7PidJkeHQuZGv31fAo-qJPDVfzRGSobIeC0RrEHoOprOj_ehXBlgJb3YiEbGSq8AUlCSIFHtfvfB0mMCBsXG7XhXsbe7D2KQ8OpPeGD2tJWlaXBrOjEUjXTpE&sig=AOD64_0dcN4gkjhZ1G6BmZmKoOYCbwxmsQ&q&adurl&ved=2ahUKEwioufaXq9r5AhXA_bsIHbwlBxwQ0Qx6BAgEEAE)
 - [Lombok](https://projectlombok.org/)
 - [Hibernate JPA](https://www.microsoft.com/software-download/windows10)
+- [Spring Security](https://spring.io/projects/spring-security)
+- Others include [docker](https://www.docker.com/), [maven](https://maven.apache.org/), 
 
 ## How to Open the repo in an IDE?
 Make sure you have [java](https://www.oracle.com/java/) installed on your machine.
