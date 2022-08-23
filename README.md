@@ -4,7 +4,7 @@ This is the backend restful service for https://github.com/mherman22/frontend.
 ## Tools used in development
 - [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 - [Spring Boot](https://spring.io/projects/spring-boot)
-- [MongoDB](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjDj4CYq9r5AhVrj2gJHT2EAzMYABAAGgJ3Zg&ohost=www.google.com&cid=CAESauD2Cnb9DjuARAaGdb8fUY7PidJkeHQuZGv31fAo-qJPDVfzRGSobIeC0RrEHoOprOj_ehXBlgJb3YiEbGSq8AUlCSIFHtfvfB0mMCBsXG7XhXsbe7D2KQ8OpPeGD2tJWlaXBrOjEUjXTpE&sig=AOD64_0dcN4gkjhZ1G6BmZmKoOYCbwxmsQ&q&adurl&ved=2ahUKEwioufaXq9r5AhXA_bsIHbwlBxwQ0Qx6BAgEEAE)
+- Mysql
 - [Lombok](https://projectlombok.org/)
 - [Hibernate JPA](https://www.microsoft.com/software-download/windows10)
 - [Spring Security](https://spring.io/projects/spring-security)
@@ -15,14 +15,9 @@ Make sure you have [java](https://www.oracle.com/java/) installed on your machin
 
 ### For Windows
 For Windows platform/machine, do the following;-
-- Download and install java 17.
+- Download and install java 8.
 - Set environment variable path (JAVA_HOME).
-- Test to see if java has been installed. `java -version` and it should return something like
-```
-java version "17.0.2" 2022-01-18 LTS
-Java(TM) SE Runtime Environment (build 17.0.2+8-LTS-86)
-Java HotSpot(TM) 64-Bit Server VM (build 17.0.2+8-LTS-86, mixed mode, sharing)
-```
+- Test to see if java has been installed. `java -version`.
 ### For Linux Platform
 Follow the steps at https://docs.oracle.com/en/java/javase/13/install/installation-jdk-linux-platforms.html to achieve that.
 
@@ -47,6 +42,9 @@ Make sure your IDE has Lombok configured in it, if not do the following;-
 - pull from origin to ensure your local repo is in sync with upstream. use `git pull origin branch-name`
 - push your changes using `git push origin branch-name`.
 - create a pull request and give it a proper description stating clearly the changes you have added.
+
+## Test endpoints
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3ae8d7d63faf8975acb4)
 
 ## Created By
 - [mherman22](https://github.com/mherman22)
