@@ -1,4 +1,4 @@
-# KTMInv
+# KTMInv [![CodeQL](https://github.com/mherman22/KTMInv/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/mherman22/KTMInv/actions/workflows/codeql-analysis.yml)
 This is the backend restful service for https://github.com/mherman22/frontend.
 
 ## Tools used in development
