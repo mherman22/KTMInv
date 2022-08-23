@@ -8,7 +8,6 @@ public class WelcomeCOntroller {
 
 	@GetMapping("/welcome")
 	public String welcomeToKTM() {
-		return "You're most welcome to KTM-INV Backend API";
-		
+		return "You're most welcome to KTM-INV Backend API";	
 	}
 }
