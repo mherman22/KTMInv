@@ -15,11 +15,11 @@ Make sure you have [java](https://www.oracle.com/java/) installed on your machin
 
 ### For Windows
 For Windows platform/machine, do the following;-
-- Download and install java 8.
+- Download and install java 17.
 - Set environment variable path (JAVA_HOME).
 - Test to see if java has been installed. `java -version`.
 ### For Linux Platform
-Follow the steps at https://docs.oracle.com/en/java/javase/13/install/installation-jdk-linux-platforms.html to achieve that.
+Follow the steps at https://mherman22.hashnode.dev/have-java-installed-on-ubuntu-easy-steps-i-followed to achieve that.
 
 ### For Mac
 Follow the steps at https://docs.oracle.com/javase/10/install/installation-jdk-and-jre-macos.htm
