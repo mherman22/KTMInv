@@ -1,6 +1,7 @@
 package com.mherman22.KTMInv.controllers;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +26,7 @@ public class PaymentController {
     }
 
     @GetMapping("/{id}")
-    Payment getPaymentById(@PathVariable Long id) {
+    Payment getPaymentById(@PathVariable UUID id) {
         return paymentRepository.findById(id)
                 .orElseThrow(() -> new PaymentNotFoundException(id));
     }

@@ -1,8 +1,14 @@
 package com.mherman22.KTMInv.controllers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mherman22.KTMInv.Exceptions.customer.CustomerNotFoundException;
 import com.mherman22.KTMInv.Repository.CustomerRepository;
 import com.mherman22.KTMInv.models.Customer;
 
@@ -23,29 +28,83 @@ public class CustomerController {
     @Autowired
     private CustomerRepository customerRepository;
 
-    @GetMapping("/list")
+    /**
+     * gets all customers
+     * 
+     * @return List<Customer>
+     */
+    @GetMapping(value = "/list")
     public List<Customer> getAll() {
         return customerRepository.findAll();
     }
 
+    /**
+     * gets customer details by customerid
+     * 
+     * @param id
+     * @return Object
+     */
     @GetMapping("/{id}")
-    Customer getById(@PathVariable Long id) {
-        return customerRepository.findById(id)
-                .orElseThrow(() -> new CustomerNotFoundException(id));
+    public Object getCustomerById(@PathVariable UUID id) {
+
+        HashMap<String, Object> response = new HashMap<>();
+        response.put("error", "Customer with id-- " + id + " -- not found!");
+
+        Optional<Customer> customer = customerRepository.findById(id);
+
+        if (customer.isPresent()) {
+            return customer.get();
+        } else {
+            return response;
+        }
     }
 
-    @PostMapping("/create")
-    public Customer createCustomer(@RequestBody Customer newCustomer) {
-        return customerRepository.save(newCustomer);
+    /**
+     * creates new customer
+     * 
+     * @param newCustomer
+     * @param result
+     * @return Object
+     */
+    @PostMapping(value = "/create")
+    public Object createCustomer(@Valid @RequestBody Customer newCustomer, BindingResult result) {
+
+        if (result.hasErrors()) {
+            return (Customer) result.getAllErrors();
+        }
+
+        Customer createdCustomer = customerRepository.save(newCustomer);
+
+        return createdCustomer;
     }
 
-    @PutMapping("/{id}")
-    public Customer updateCustomer(@RequestBody Customer customer) {
+    /**
+     * updates a customer's details
+     * 
+     * @param updatecustomer
+     * @return
+     */
+    @PutMapping(value = "/{id}")
+    public Object updateCustomer(@Valid @RequestBody Customer updatecustomer, BindingResult result) {
+
+        Customer customer = customerRepository.getReferenceById(updatecustomer.getCustomerID());
+
+        if (result.hasErrors()) {
+            return (Customer) result.getAllErrors();
+        }
+
+        customer = updatecustomer;
+
         return customerRepository.save(customer);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable Long id) {
+    /**
+     * deletes a customer using the id
+     * 
+     * @param id
+     */
+    @DeleteMapping(value = "/{id}")
+    public void deleteById(@PathVariable("customerid") UUID id) {
         customerRepository.deleteById(id);
     }
 
