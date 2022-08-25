@@ -1,5 +1,6 @@
 package com.mherman22.KTMInv.models;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -17,14 +18,15 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Payment {
-	
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Payment implements Serializable {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long paymentID;
-	
+
 	@Column(name = "payment_mode")
 	private String paymentMode;
-	
+
 	@Column(name = "payment_date")
 	private Date paymentDate;
 }

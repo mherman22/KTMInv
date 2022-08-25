@@ -2,7 +2,7 @@
 This is the backend restful service for https://github.com/mherman22/frontend.
 
 ## Tools used in development
-- [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- Java 8
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - Mysql
 - [Lombok](https://projectlombok.org/)
