@@ -4,6 +4,8 @@ This is the backend restful service for <https://github.com/mherman22/frontend>.
 
 ## Tools used in development
 
+[![Dependency Review](https://github.com/mherman22/KTMInv/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/mherman22/KTMInv/actions/workflows/dependency-review.yml)
+
 - Java 17
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - Mysql
