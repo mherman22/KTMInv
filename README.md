@@ -60,6 +60,10 @@ Make sure your IDE has Lombok configured in it, if not do the following;-
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3ae8d7d63faf8975acb4)
 
+## Documentation
+
+The documentation for the rest api can be found at <https://github.com/mherman22/KTMInv-docs>
+
 ## Created By
 
 - [mherman22](https://github.com/mherman22)
