@@ -8,6 +8,7 @@ import java.util.UUID;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,7 +46,7 @@ public class CustomerController {
      * @return Object
      */
     @GetMapping("/{id}")
-    public Object getCustomerById(@PathVariable UUID id) {
+    public Object getCustomerById(@PathVariable Long id) {
 
         HashMap<String, Object> response = new HashMap<>();
         response.put("error", "Customer with id-- " + id + " -- not found!");
@@ -70,7 +71,7 @@ public class CustomerController {
     public Object createCustomer(@Valid @RequestBody Customer newCustomer, BindingResult result) {
 
         if (result.hasErrors()) {
-            return (Customer) result.getAllErrors();
+            return result.getAllErrors();
         }
 
         Customer createdCustomer = customerRepository.save(newCustomer);
@@ -85,17 +86,17 @@ public class CustomerController {
      * @return
      */
     @PutMapping(value = "/{id}")
-    public Object updateCustomer(@Valid @RequestBody Customer updatecustomer, BindingResult result) {
+    public ResponseEntity<?> updateCustomer(@Valid @RequestBody Customer updatecustomer, BindingResult result) {
 
-        Customer customer = customerRepository.getReferenceById(updatecustomer.getCustomerID());
+        // Customer customer =
+        // customerRepository.getOne(updatecustomer.getCustomerID());
+        // customer = updatecustomer;
 
         if (result.hasErrors()) {
-            return (Customer) result.getAllErrors();
+            return (ResponseEntity<?>) result.getAllErrors();
         }
-
-        customer = updatecustomer;
-
-        return customerRepository.save(customer);
+        customerRepository.save(updatecustomer);
+        return ResponseEntity.ok("customer has been updated");
     }
 
     /**
@@ -104,7 +105,7 @@ public class CustomerController {
      * @param id
      */
     @DeleteMapping(value = "/{id}")
-    public void deleteById(@PathVariable("customerid") UUID id) {
+    public void deleteById(@PathVariable Long id) {
         customerRepository.deleteById(id);
     }
 

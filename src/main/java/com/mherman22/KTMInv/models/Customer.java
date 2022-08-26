@@ -1,7 +1,6 @@
 package com.mherman22.KTMInv.models;
 
 import java.io.Serializable;
-import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,8 +11,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-
-import org.hibernate.annotations.GenericGenerator;
 
 import com.mherman22.KTMInv.Validations.NameConstraint;
 
@@ -29,32 +26,31 @@ import lombok.NoArgsConstructor;
 public class Customer implements Serializable {
 
 	@Id
-	@GeneratedValue(generator = "UUID", strategy = GenerationType.AUTO)
-	@GenericGenerator(name = "id", strategy = "org.hibernate.id.UUIDGenerator")
-	private UUID customerID;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long customerID;
 
 	@Column(name = "first_name")
-	@NotBlank
+	@NotBlank(message = "First Name cannot be blank")
 	@Size(min = 2, max = 20, message = "First Name cannot be more than 20 characters")
 	@NameConstraint
 	private String firstName;
 
 	@Column(name = "last_name")
-	@NotBlank
+	@NotBlank(message = "Last Name cannot be blank")
 	@Size(min = 2, max = 20, message = "Last Name cannot be more than 20 characters")
 	@NameConstraint
 	private String lastName;
 
 	@Column(name = "physical_address")
-	@NotBlank
+	@NotBlank(message = "Physical Address cannot be blank")
 	private String physicalAddress;
 
 	@Column(name = "email_address")
-	@NotBlank
+	@NotBlank(message = "Email cannot be blank")
 	@Email
 	private String emailAddress;
 
 	@Column(name = "phone_number")
-	@NotBlank
+	@NotBlank(message = "Phone Number cannot be blank")
 	private String phoneNumber;
 }
