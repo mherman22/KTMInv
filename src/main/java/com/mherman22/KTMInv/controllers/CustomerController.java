@@ -83,20 +83,24 @@ public class CustomerController {
      * updates a customer's details
      * 
      * @param updatecustomer
+     * @param id
      * @return
      */
     @PutMapping(value = "/{id}")
-    public ResponseEntity<?> updateCustomer(@Valid @RequestBody Customer updatecustomer, BindingResult result) {
-
-        // Customer customer =
-        // customerRepository.getOne(updatecustomer.getCustomerID());
-        // customer = updatecustomer;
+    public Customer updateCustomer(@Valid @RequestBody Customer updatecustomer, BindingResult result,
+            @PathVariable Long id) {
 
         if (result.hasErrors()) {
-            return (ResponseEntity<?>) result.getAllErrors();
+            return (Customer) result.getAllErrors();
         }
-        customerRepository.save(updatecustomer);
-        return ResponseEntity.ok("customer has been updated");
+
+        Customer customer = customerRepository.findById(id).get();
+        customer.setFirstName(updatecustomer.getFirstName());
+        customer.setLastName(updatecustomer.getLastName());
+        customer.setEmailAddress(updatecustomer.getEmailAddress());
+        customer.setPhysicalAddress(updatecustomer.getPhysicalAddress());
+        customer.setPhoneNumber(updatecustomer.getPhoneNumber());
+        return customerRepository.save(customer);
     }
 
     /**
